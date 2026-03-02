@@ -7,20 +7,6 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,7 +29,7 @@ const Hero = () => {
 
 
   return (
-    <div className="pb-20 pt-36">
+    <section id="home" className="pb-20 pt-40">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -129,6 +115,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
+
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -152,7 +139,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

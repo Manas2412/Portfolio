@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useId } from "react";
 
 type SpotlightProps = {
   className?: string;
@@ -7,6 +7,7 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
+  const id = useId();
   return (
     <svg
       className={cn(
@@ -17,7 +18,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
       viewBox="0 0 3787 2842"
       fill="none"
     >
-      <g filter="url(#filter)">
+      <g filter={`url(#${id})`}>
         <ellipse
           cx="1924.71"
           cy="273.501"
@@ -30,7 +31,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
       </g>
       <defs>
         <filter
-          id="filter"
+          id={id}
           x="0.860352"
           y="0.838989"
           width="3785.16"
@@ -54,3 +55,4 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
     </svg>
   );
 };
+
