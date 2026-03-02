@@ -162,7 +162,7 @@ const About = () => {
 
               <div className="pt-4">
                 <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-white border-b border-white pb-1 hover:opacity-70 transition-opacity font-heading italic">
-                  Let's create something together &rarr;
+                  Let&apos;s create something together &rarr;
                 </button>
               </div>
             </motion.div>
