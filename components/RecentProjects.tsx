@@ -83,7 +83,7 @@ const projects = [
       'Built backend logic for content management and dynamic question rendering',
       'Designed responsive UI using modern CSS utilities and reusable components',
     ],
-    image: '/assets/codeyatra.png',
+    image: '/assets/codeyatra.jpeg',
     tags: ['React', 'Next.js', 'Node.js', 'PostgreSQL'],
     gradient: 'from-pink-500/20 to-rose-500/10',
     link: 'https://github.com/Manas2412/CodeYatra',
@@ -95,7 +95,7 @@ const RecentProjects = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="work" className="py-20 relative overflow-hidden">
+    <section id="projects" className="py-20 relative overflow-hidden">
       {/* Dashed Guide Lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div

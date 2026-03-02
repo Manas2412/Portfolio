@@ -1,10 +1,10 @@
+'use client'
 import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { useEffect, useState } from "react";
 
 const Hero = () => {
   const containerVariants = {
@@ -86,9 +86,9 @@ const Hero = () => {
           >
             <div className="flex gap-3">
               {[
-                { Icon: Github, href: "https://github.com/Vishaltakshak", label: "GitHub" },
-                { Icon: Linkedin, href: "https://linkedin.com/in/vishal-takshak", label: "LinkedIn" },
-                { Icon: Mail, href: "mailto:vishaltakshakvishal@gmail.com", label: "Email" },
+                { Icon: Github, href: "https://github.com/Manas2412", label: "GitHub" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/manas-sisodia/", label: "LinkedIn" },
+                { Icon: Mail, href: "mailto:manassisodia3@gmail.com", label: "Email" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}
