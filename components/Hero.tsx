@@ -66,33 +66,39 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex justify-left relative my-20 z-10 text-left">
-          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-            <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-              Dynamic Web Magic with Next.js
-            </p>
+      <motion.div
+        className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center px-5"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="flex flex-col justify-center items-start relative z-10 text-left order-2 lg:order-1">
+          <motion.p
+            variants={itemVariants}
+            className="uppercase tracking-widest text-xs text-blue-100 max-w-80"
+          >
+            Dynamic Web Magic with Next.js
+          </motion.p>
 
+          <motion.div variants={itemVariants} className="w-full">
             <TextGenerateEffect
               words="Manas Sisodia"
-              className="text-center text-[40px] md:text-5xl lg:text-6xl"
+              className="text-left text-[40px] md:text-5xl lg:text-7xl mb-2"
             />
+          </motion.div>
 
-            <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-              Full-stack developer building <span className="text-white">scalable, real-time systems <br /></span> designed to solve real-world problems.
-            </p>
+          <motion.p
+            variants={itemVariants}
+            className="text-left md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl text-gray-400 max-w-[600px]"
+          >
+            Full-stack developer building <span className="text-white">scalable, real-time systems </span> designed to solve real-world problems.
+          </motion.p>
 
-
-            <div className="flex items-center justify-left gap-4 w-full text-left">
-
-              <a href="#about">
-                <MagicButton
-                  title="Show my work"
-                  icon={<FaLocationArrow />}
-                  position="right"
-                />
-              </a>
-
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-start gap-6 mt-4"
+          >
+            <div className="flex gap-3">
               {[
                 { Icon: Github, href: "https://github.com/Vishaltakshak", label: "GitHub" },
                 { Icon: Linkedin, href: "https://linkedin.com/in/vishal-takshak", label: "LinkedIn" },
@@ -112,7 +118,15 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-          </div>
+
+            <a href="#about" className="flex items-center justify-center">
+              <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+          </motion.div>
         </div>
 
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
@@ -137,7 +151,7 @@ const Hero = () => {
             <div className="absolute -z-10 -left-6 -top-6 w-full h-full border border-dashed border-white/5 rounded-full animate-[spin_60s_linear_infinite]" />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
