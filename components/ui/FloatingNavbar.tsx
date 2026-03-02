@@ -58,6 +58,14 @@ export const FloatingNav = ({
     }
   };
 
+  const openCommandPalette = () => {
+    const event = new KeyboardEvent('keydown', {
+      key: 'k',
+      metaKey: true,
+      bubbles: true,
+    });
+    window.dispatchEvent(event);
+  };
 
   return (
     <motion.nav
@@ -100,6 +108,15 @@ export const FloatingNav = ({
 
         <div className="w-px h-4 bg-white/10 mx-1"></div>
 
+        <button
+          type="button"
+          onClick={openCommandPalette}
+          className="flex items-center gap-2 px-3 py-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
+          aria-label="Search"
+        >
+          <Search size={16} />
+          <span className="hidden sm:inline text-xs font-mono opacity-60">⌘K</span>
+        </button>
       </div>
     </motion.nav>
   );
