@@ -95,7 +95,7 @@ const RecentProjects = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <section id="projects" className="py-20 relative overflow-hidden max-[240px]:py-8">
       {/* Dashed Guide Lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -121,7 +121,7 @@ const RecentProjects = () => {
         />
       </div>
 
-      <div className="max-w-7xl w-full mx-auto px-5 sm:px-10 relative z-10">
+      <div className="max-w-7xl w-full mx-auto px-5 sm:px-10 relative z-10 max-[240px]:px-2">
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -133,10 +133,10 @@ const RecentProjects = () => {
             A small selection of{' '}
             <span className="text-purple">recent projects</span>
           </h1>
-          <div className="h-px w-24 bg-white/20 mx-auto mb-16" />
+          <div className="h-px w-24 bg-white/20 mx-auto mb-16 max-[240px]:mb-8" />
 
           {/* Masonry Grid */}
-          <div className="grid md:grid-cols-2 gap-y-20 gap-x-12 lg:gap-x-16">
+          <div className="grid md:grid-cols-2 gap-y-20 gap-x-12 lg:gap-x-16 max-[240px]:gap-y-8 max-[240px]:gap-x-0">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -152,23 +152,23 @@ const RecentProjects = () => {
                   rel="noopener noreferrer"
                   className={`block relative rounded-2xl overflow-hidden bg-gradient-to-br ${project.gradient} border border-white/5 transition-all duration-500 hover:border-white/15 hover:shadow-2xl hover:shadow-purple/5`}
                 >
-                  <div className="p-6 pb-0 relative">
+                  <div className="p-6 pb-0 relative max-[240px]:p-3 max-[240px]:pb-0">
                     {/* Card Header */}
-                    <div className="flex justify-between items-start mb-5">
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-widest text-white-100 opacity-50 mb-1">
+                    <div className="flex justify-between items-start mb-5 max-[240px]:mb-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs font-medium uppercase tracking-widest text-white-100 opacity-50 mb-1 max-[240px]:text-[10px] max-[240px]:mb-0.5">
                           {project.category}
                         </p>
-                        <h3 className="text-2xl font-bold text-white mb-1">{project.title}</h3>
-                        <p className="text-sm text-white-200">{project.description}</p>
+                        <h3 className="text-2xl font-bold text-white mb-1 max-[240px]:text-sm max-[240px]:mb-0.5">{project.title}</h3>
+                        <p className="text-sm text-white-200 max-[240px]:text-[10px] line-clamp-2">{project.description}</p>
                       </div>
-                      <div className="shrink-0 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 text-white/60">
-                        <ArrowUpRight size={16} />
+                      <div className="shrink-0 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 text-white/60 max-[240px]:w-7 max-[240px]:h-7">
+                        <ArrowUpRight size={16} className="max-[240px]:w-3 max-[240px]:h-3" />
                       </div>
                     </div>
 
                     {/* Mockup Image */}
-                    <div className="relative mt-6 rounded-t-xl overflow-hidden shadow-2xl transform transition-transform duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2">
+                    <div className="relative mt-6 rounded-t-xl overflow-hidden shadow-2xl transform transition-transform duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2 max-[240px]:mt-3">
                       <div className="aspect-[4/3] bg-black-100 border-t border-x border-white/10 rounded-t-xl">
                         <img
                           src={project.image}
@@ -183,21 +183,21 @@ const RecentProjects = () => {
                 </a>
 
                 {/* Project Details Below Card */}
-                <div className="mt-6 pl-6 border-l border-white/10 space-y-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                  <ul className="space-y-2">
+                <div className="mt-6 pl-6 border-l border-white/10 space-y-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500 max-[240px]:mt-3 max-[240px]:pl-3 max-[240px]:space-y-2">
+                  <ul className="space-y-2 max-[240px]:space-y-1">
                     {project.detailedDesc.map((item, i) => (
-                      <li key={i} className="text-sm text-white-200 flex items-start gap-2">
+                      <li key={i} className="text-sm text-white-200 flex items-start gap-2 max-[240px]:text-[10px]">
                         <span className="mt-[6px] shrink-0 w-1 h-1 rounded-full bg-white/30" />
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2 pt-1">
+                  <div className="flex flex-wrap gap-2 pt-1 max-[240px]:gap-1 max-[240px]:pt-0.5">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] uppercase tracking-wider font-semibold text-white-100 border border-white/10 px-3 py-1 rounded-full hover:border-white/30 transition-colors"
+                        className="text-[10px] uppercase tracking-wider font-semibold text-white-100 border border-white/10 px-3 py-1 rounded-full hover:border-white/30 transition-colors max-[240px]:text-[8px] max-[240px]:px-2 max-[240px]:py-0.5"
                       >
                         {tag}
                       </span>

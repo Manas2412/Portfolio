@@ -29,7 +29,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="pb-20 pt-40">
+    <section id="home" className="pb-20 pt-40 max-[240px]:pt-24 max-[240px]:pb-12">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -53,7 +53,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center px-5"
+        className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center px-5 max-[240px]:px-2 max-[240px]:gap-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -61,30 +61,30 @@ const Hero = () => {
         <div className="flex flex-col justify-center items-start relative z-10 text-left order-2 lg:order-1">
           <motion.p
             variants={itemVariants}
-            className="uppercase tracking-widest text-xs text-blue-100 max-w-80"
+            className="uppercase tracking-widest text-xs text-blue-100 max-w-80 max-[240px]:text-[10px] max-[240px]:max-w-full"
           >
-            Dynamic Web Magic with Next.js
+            I engineer impact. Not just software.
           </motion.p>
 
           <motion.div variants={itemVariants} className="w-full">
             <TextGenerateEffect
               words="Manas Sisodia"
-              className="text-left text-[40px] md:text-5xl lg:text-7xl mb-2"
+              className="text-left text-[40px] md:text-5xl lg:text-7xl mb-2 max-[240px]:text-2xl max-[240px]:mb-1"
             />
           </motion.div>
 
           <motion.p
             variants={itemVariants}
-            className="text-left md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl text-gray-400 max-w-[600px]"
+            className="text-left md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl text-gray-400 max-w-[600px] max-[240px]:text-xs max-[240px]:mb-4 max-[240px]:max-w-full"
           >
             Full-stack developer building <span className="text-white">scalable, real-time systems </span> designed to solve real-world problems.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-start gap-6 mt-4"
+            className="flex flex-col items-start gap-6 mt-4 max-[240px]:gap-3 max-[240px]:mt-2"
           >
-            <div className="flex gap-3">
+            <div className="flex gap-3 max-[240px]:gap-2">
               {[
                 { Icon: Github, href: "https://github.com/Manas2412", label: "GitHub" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/in/manas-sisodia/", label: "LinkedIn" },
@@ -97,7 +97,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/10 
                  hover:bg-white/10 hover:border-white/30 hover:text-white 
-                 text-gray-400 transition-all duration-300"
+                 text-gray-400 transition-all duration-300 max-[240px]:p-2"
                   aria-label={label}
                 >
                   <Icon size={18} />
@@ -121,7 +121,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]"
+            className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] max-[240px]:w-40 max-[240px]:h-40"
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl animate-pulse" />
 

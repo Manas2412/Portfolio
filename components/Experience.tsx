@@ -71,8 +71,8 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="experience" className="py-20 relative">
-      <div className="max-w-7xl w-full mx-auto px-5 sm:px-10">
+    <section id="experience" className="py-20 relative max-[240px]:py-8">
+      <div className="max-w-7xl w-full mx-auto px-5 sm:px-10 max-[240px]:px-2">
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -80,7 +80,7 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
         >
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 max-[240px]:mb-8">
             <motion.h1
               className="heading"
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ const Experience = () => {
               <span className="text-purple">Education</span>
             </motion.h1>
             <motion.p
-              className="text-white-200 text-lg max-w-2xl mx-auto mt-4"
+              className="text-white-200 text-lg max-w-2xl mx-auto mt-4 max-[240px]:text-xs max-[240px]:mt-2 max-[240px]:max-w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -100,41 +100,41 @@ const Experience = () => {
             </motion.p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-[240px]:gap-6">
             {/* Leadership Experience */}
             <div>
-              <div className="flex items-center gap-3 mb-8">
-                <Briefcase className="w-6 h-6 text-white" />
-                <h3 className="text-2xl font-bold text-white">Professional Experience</h3>
+              <div className="flex items-center gap-3 mb-8 max-[240px]:gap-2 max-[240px]:mb-4">
+                <Briefcase className="w-6 h-6 text-white max-[240px]:w-4 max-[240px]:h-4" />
+                <h3 className="text-2xl font-bold text-white max-[240px]:text-base">Professional Experience</h3>
               </div>
 
-              <div className="space-y-12">
+              <div className="space-y-12 max-[240px]:space-y-6">
                 {experiences.map((exp, index) => (
                   <motion.div
                     key={index}
-                    className="relative pl-8 border-l border-white/10"
+                    className="relative pl-8 border-l border-white/10 max-[240px]:pl-4"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   >
                     <div className="absolute -left-1.5 top-2 w-3 h-3 bg-white rounded-full border-4 border-black-100" />
 
-                    <div className="mb-2">
-                      <span className="text-sm font-medium text-white-200 py-1 px-3 bg-white/5 rounded-full inline-block mb-3 border border-white/10">
+                    <div className="mb-2 max-[240px]:mb-1">
+                      <span className="text-sm font-medium text-white-200 py-1 px-3 bg-white/5 rounded-full inline-block mb-3 border border-white/10 max-[240px]:text-[10px] max-[240px]:py-0.5 max-[240px]:px-2 max-[240px]:mb-2">
                         {exp.period}
                       </span>
-                      <h4 className="text-xl font-bold text-white">{exp.role}</h4>
-                      <p className="text-base text-white-100 italic">{exp.company}</p>
+                      <h4 className="text-xl font-bold text-white max-[240px]:text-sm">{exp.role}</h4>
+                      <p className="text-base text-white-100 italic max-[240px]:text-xs">{exp.company}</p>
                       {'project' in exp && (
-                        <p className="text-xs text-purple font-semibold mt-1 uppercase tracking-wider">
+                        <p className="text-xs text-purple font-semibold mt-1 uppercase tracking-wider max-[240px]:text-[10px] max-[240px]:mt-0.5">
                           {(exp as any).project}
                         </p>
                       )}
                     </div>
 
-                    <ul className="space-y-2 mt-4">
+                    <ul className="space-y-2 mt-4 max-[240px]:mt-2 max-[240px]:space-y-1">
                       {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="text-white-200 text-sm leading-relaxed flex items-start gap-2">
+                        <li key={i} className="text-white-200 text-sm leading-relaxed flex items-start gap-2 max-[240px]:text-[10px]">
                           <span className="mt-1.5 w-1 h-1 bg-white/50 rounded-full flex-shrink-0" />
                           {achievement}
                         </li>
@@ -146,31 +146,31 @@ const Experience = () => {
             </div>
 
             {/* Education & Achievements */}
-            <div className="space-y-12">
+            <div className="space-y-12 max-[240px]:space-y-6">
               {/* Education */}
               <div>
-                <div className="flex items-center gap-3 mb-8">
-                  <Calendar className="w-6 h-6 text-white" />
-                  <h3 className="text-2xl font-bold text-white">Education</h3>
+                <div className="flex items-center gap-3 mb-8 max-[240px]:gap-2 max-[240px]:mb-4">
+                  <Calendar className="w-6 h-6 text-white max-[240px]:w-4 max-[240px]:h-4" />
+                  <h3 className="text-2xl font-bold text-white max-[240px]:text-base">Education</h3>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-6 max-[240px]:space-y-3">
                   {education.map((edu, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white/[0.03] p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300"
+                      className="bg-white/[0.03] p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 max-[240px]:p-3 max-[240px]:rounded-xl"
                       initial={{ opacity: 0, y: 20 }}
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                     >
-                      <div className="flex justify-between items-start mb-2 gap-4">
-                        <h4 className="text-base font-bold text-white">{edu.institution}</h4>
-                        <span className="text-xs text-white-200 bg-white/10 px-2 py-1 rounded shrink-0">
+                      <div className="flex justify-between items-start mb-2 gap-4 max-[240px]:gap-2 max-[240px]:flex-wrap">
+                        <h4 className="text-base font-bold text-white max-[240px]:text-xs">{edu.institution}</h4>
+                        <span className="text-xs text-white-200 bg-white/10 px-2 py-1 rounded shrink-0 max-[240px]:text-[10px] max-[240px]:px-1.5 max-[240px]:py-0.5">
                           {edu.period}
                         </span>
                       </div>
-                      <p className="text-white-100 italic">{edu.degree}</p>
-                      <p className="text-sm text-white-200 opacity-60 mt-1">{edu.location}</p>
+                      <p className="text-white-100 italic max-[240px]:text-xs">{edu.degree}</p>
+                      <p className="text-sm text-white-200 opacity-60 mt-1 max-[240px]:text-[10px] max-[240px]:mt-0.5">{edu.location}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -178,22 +178,22 @@ const Experience = () => {
 
               {/* Achievements */}
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Award className="w-6 h-6 text-white" />
-                  <h3 className="text-2xl font-bold text-white">Achievements</h3>
+                <div className="flex items-center gap-3 mb-6 max-[240px]:gap-2 max-[240px]:mb-3">
+                  <Award className="w-6 h-6 text-white max-[240px]:w-4 max-[240px]:h-4" />
+                  <h3 className="text-2xl font-bold text-white max-[240px]:text-base">Achievements</h3>
                 </div>
 
-                <div className="grid gap-3">
+                <div className="grid gap-3 max-[240px]:gap-2">
                   {achievements.map((item, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors duration-200"
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors duration-200 max-[240px]:p-2 max-[240px]:gap-2"
                       initial={{ opacity: 0, x: 20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                       transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                     >
                       <div className="w-2 h-2 bg-purple rounded-full flex-shrink-0" />
-                      <span className="text-white-100">{item}</span>
+                      <span className="text-white-100 max-[240px]:text-xs">{item}</span>
                     </motion.div>
                   ))}
                 </div>

@@ -109,18 +109,18 @@ const CommandPalette = () => {
                             exit={{ opacity: 0, scale: 0.95, y: -20 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                             style={{ left: '50%', marginLeft: '-min(42rem, 50vw - 1rem)' }}
-                            className="fixed top-4 w-full max-w-2xl z-50 px-4"
+                            className="fixed top-4 w-full max-w-2xl z-50 px-4 max-[240px]:px-2 max-[240px]:top-2"
                         >
-                            <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl border border-white/10 max-[240px]:rounded-xl">
                                 {/* Search Input */}
-                                <div className="flex items-center gap-4 p-5 border-b border-white/10">
-                                    <Search className="text-gray-500" size={22} />
+                                <div className="flex items-center gap-4 p-5 border-b border-white/10 max-[240px]:gap-2 max-[240px]:p-3">
+                                    <Search className="text-gray-500 max-[240px]:w-4 max-[240px]:h-4" size={22} />
                                     <input
                                         type="text"
                                         value={search}
                                         onChange={(e) => setSearch(e.target.value)}
                                         placeholder="Search"
-                                        className="flex-1 bg-transparent border-none outline-none text-white text-lg placeholder-gray-600"
+                                        className="flex-1 bg-transparent border-none outline-none text-white text-lg placeholder-gray-600 max-[240px]:text-sm min-w-0"
                                         autoFocus
                                     />
                                     <div className="flex items-center gap-2">

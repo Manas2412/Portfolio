@@ -82,4 +82,9 @@
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+  @media (max-width: 240px) {
+    .heading {
+      @apply text-xl;
+    }
+  }
 }
