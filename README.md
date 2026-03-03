@@ -12,10 +12,10 @@
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
 
-  <h3 align="center">A Modern Next.js Portfolio</h3>
+  <h3 align="center">Manas's Portfolio</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
+     A modern, responsive portfolio built with Next.js. Static export ready for deployment (e.g. S3, GitHub Pages).
     </div>
 </div>
 
@@ -39,11 +39,7 @@ If you prefer visual learning, this is the perfect resource for you. Follow our 
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Built with Next.js for handling the user interface, Three.js for rendering 3D elements, Framer motion for beautiful animations, and styled with TailwindCSS, this portfolio demonstrates the developer's skills in a unique manner that creates a lasting impact.
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **34k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+This portfolio is built with **Next.js**, **Framer Motion**, and **Tailwind CSS**. It includes a floating navbar with section navigation and a command palette (⌘K), static export for easy deployment, and responsive layouts for mobile (including very narrow viewports &lt; 240px). The favicon is loaded from `public/assets/profile.jpg` via `app/layout.tsx`.
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
@@ -54,21 +50,25 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 ## <a name="features">🔋 Features</a>
 
-👉 **Hero**: Captivating introduction featuring a spotlight effect and dynamic background.
+👉 **Hero**: Introduction with spotlight effect, profile image, and CTA.
 
-👉 **Bento Grid**: Modern layout presenting personal information using cutting-edge CSS design techniques.
+👉 **Floating Navbar**: Sticky nav with section links (Home, About, Work, Experience, Contact) and ⌘K command palette trigger. Scrollable on very narrow screens.
 
-👉 **3D Elements**:  Interactive 3D design elements, such as a GitHub-style globe and card hover effects, adding depth and engagement.
+👉 **About (Grid)**: Professional summary with terminal-style card and core competencies grid.
 
-👉 **Testimonials**: Dynamic testimonials area with scrolling or animated content for enhanced engagement.
+👉 **Skills**: Animated skill sliders (Languages, Frontend, Backend, DevOps).
 
-👉 **Work Experience**: Prominent display of professional background for emphasis and credibility.
+👉 **Recent Projects**: Project cards with descriptions, tags, and links.
 
-👉 **Canvas Effect**: Innovative use of HTML5 canvas to create visually striking effects in the "approaches" section.
+👉 **Experience & Education**: Timeline-style experience, education, and achievements.
 
-👉 **Responsiveness**: Seamless adaptability across all devices, ensuring optimal viewing experience for every user.
+👉 **Contact**: Get in touch section with contact info and form.
 
-and many more, including code architecture and reusability 
+👉 **Command Palette**: ⌘K / Ctrl+K search and quick navigation.
+
+👉 **Responsiveness**: Optimized for all viewports, including **&lt; 420px** (compact nav, tighter grids) and **&lt; 240px** (minimal padding, smaller typography, no overflow).
+
+👉 **Static Export**: `output: "export"` for static hosting (e.g. S3). Favicon from `/assets/profile.jpg`. 
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -105,6 +105,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
+**Build (static export)**
+
+```bash
+npm run build
+```
+
+Output is generated for static deployment. Ensure `public/assets/profile.jpg` exists for the favicon.
+
 ## <a name="snippets">🕸️ Snippets</a>
 
 <details>
@@ -112,9 +120,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ```typescript
 export const navItems = [
+  { name: "Home", link: "#home" },
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Work", link: "#projects" },  // links to section id="projects" (Recent Projects)
+  { name: "Experience", link: "#experience" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -631,6 +640,11 @@ export default config;
 @layer utilities {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
+  }
+  @media (max-width: 240px) {
+    .heading {
+      @apply text-xl;
+    }
   }
 
   .black-gradient {
