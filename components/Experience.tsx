@@ -62,6 +62,9 @@ const education = [
 ];
 
 const achievements = [
+  'LeetCode Contest Rating — 1640',
+  'CodeForces Contest Rating — 1490',
+  '1st Place — UHI Hackathon (Spectrum Slam)',
   'Winner — BVP HEX Hackathon (Blockchain Track)',
   'Special Jury Mention — HackMol 5.0 (NIT Jalandhar)',
 ];

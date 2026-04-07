@@ -9,11 +9,11 @@ const TerminalCard = () => {
     "> user.init()",
     "> Status:  Online",
     "> Name:    Manas",
-    "> Role:    Full-Stack Developer",
-    "> Stack:   MERN",
-    "> Focus:   Real-time systems",
-    ">          Secure APIs",
-    ">          Scalable architecture",
+    "> Role:    Backend & AI Engineer",
+    "> Stack:   Python, FastAPI, TS, React",
+    "> ML:      LangChain, pgvector, Ollama",
+    "> Focus:   Event-driven backends",
+    ">          Production RAG pipelines",
   ];
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const TerminalCard = () => {
               <span className="text-blue-400 mr-2">$</span>
               {index === 0 ? <span className="text-green-400">{line}</span> :
                 line.includes("Name") || line.includes("Role") ? <span className="text-white">{line}</span> :
-                  line.includes("Stack") || line.includes("Focus") ? <span className="text-purple-300">{line}</span> :
+                  line.includes("Stack") || line.includes("Focus") || line.includes("ML") ? <span className="text-purple-300">{line}</span> :
                     line}
             </div>
           ))}
@@ -98,10 +98,10 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const stats = [
-    { icon: Code, label: 'Frontend', value: 'React/Tailwind' },
-    { icon: Server, label: 'Backend', value: 'Node/Express' },
-    { icon: Database, label: 'Database', value: 'Mongo/Postgres' },
-    { icon: User, label: 'Experience', value: 'Leadership' },
+    { icon: Server, label: 'Backend', value: 'FastAPI/Node.js' },
+    { icon: Database, label: 'Database', value: 'PostgreSQL/Redis' },
+    { icon: Code, label: 'AI/ML', value: 'LangChain/pgvector' },
+    { icon: User, label: 'Cloud/DevOps', value: 'Docker/AWS' },
   ];
 
   return (
@@ -144,20 +144,17 @@ const About = () => {
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <h3 className="text-3xl font-bold text-white font-heading max-[240px]:text-lg">
-                Building Scalable MERN Applications
+              <h3 className="text-2xl lg:text-[28px] xl:text-3xl font-bold text-white font-heading whitespace-nowrap tracking-tight">
+                High-Performance Backends & Applied AI
               </h3>
               <p className="text-gray-400 leading-relaxed text-lg max-[240px]:text-xs">
-                Full-stack developer skilled in building scalable <strong className="text-white">MERN applications</strong> with
-                real-time communication, secure backend APIs, WebRTC, and optimized database workflows.
+                Backend engineering specialist focused on building event-driven architectures capable of handling 300+ events/sec, using <strong className="text-white">FastAPI, Node.js, Redis, and WebSockets.</strong>
               </p>
               <p className="text-gray-400 leading-relaxed text-lg max-[240px]:text-xs">
-                Passionate about system design, performance engineering, and delivering
-                production-grade solutions with clean, maintainable code.
+                Comfortable owning the full AI product stack—from data ingestion and AST-aware vector retrieval (<strong className="text-white">pgvector, Pinecone</strong>) to LLM serving and model deployment.
               </p>
               <p className="text-gray-400 leading-relaxed text-lg max-[240px]:text-xs">
-                Hackathon winner with strong leadership experience as Vice President and
-                Event Management Head, organizing events for 500+ attendees.
+                A 3× hackathon placer and national-level athlete, blending relentless discipline with a deep passion for scalable system design and reliable CI/CD pipelines.
               </p>
 
               <div className="pt-4">

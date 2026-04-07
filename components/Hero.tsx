@@ -63,7 +63,7 @@ const Hero = () => {
             variants={itemVariants}
             className="uppercase tracking-widest text-xs text-blue-100 max-w-80 max-[240px]:text-[10px] max-[240px]:max-w-full"
           >
-            I engineer impact. Not just software.
+            Backend & Applied AI Engineer
           </motion.p>
 
           <motion.div variants={itemVariants} className="w-full">
@@ -77,7 +77,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-left md:tracking-wider mb-8 text-sm md:text-lg lg:text-xl text-gray-400 max-w-[600px] max-[240px]:text-xs max-[240px]:mb-4 max-[240px]:max-w-full"
           >
-            Full-stack developer building <span className="text-white">scalable, real-time systems </span> designed to solve real-world problems.
+            Building <span className="text-white">event-driven backends</span> and <span className="text-white">production AI pipelines</span>. Operating across the full AI product stack from data ingestion to LLM serving.
           </motion.p>
 
           <motion.div
